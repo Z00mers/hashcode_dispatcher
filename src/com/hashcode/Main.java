@@ -11,9 +11,13 @@ public class Main {
         System.out.println("Works!!!");
 
         Step step;
+        int numberOfMaxSteps = 0 ;
 
 
-        for (int i = 0 , step. ,i++ ){
+
+
+        for (int i = 0; numberOfMaxSteps > i; i++ ){
+
 
         }
 
