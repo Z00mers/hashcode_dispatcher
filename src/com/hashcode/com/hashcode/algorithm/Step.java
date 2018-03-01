@@ -7,6 +7,7 @@ import java.util.List;
 
 public class Step {
 
+  static int occuranceStep = 0;
   List<Car> cars;
   List<Ride> rides;
 
@@ -14,4 +15,5 @@ public class Step {
     this.cars = cars;
     this.rides = rides;
   }
+
 }
