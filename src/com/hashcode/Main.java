@@ -13,9 +13,9 @@ public class Main {
         Step step;
 
 
-        for (int i = 0 , step. ,i++ ){
+        //for (int i = 0 , step. ,i++ ){
 
-        }
+        //}
 
     }
 }
