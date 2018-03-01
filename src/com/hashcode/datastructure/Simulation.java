@@ -1,7 +1,9 @@
 package com.hashcode.datastructure;
 
+import java.util.ArrayList;
 import java.util.List;
 import com.hashcode.utils.Car;
+import com.hashcode.utils.Point;
 import com.hashcode.utils.Ride;
 
 public class Simulation {
@@ -9,18 +11,27 @@ public class Simulation {
   List<Ride> rides;
   int rowNumber;
   int columnNumber;
-  int nVehicles;
+  int nCars;
   int nRides;
   int bonus;
   int steps;
 
-  public Simulation(int rowNumber, int columnNumber, int nVehicles, int nRides, int bonus, int steps) {
+  public Simulation(List<Ride> rides, int rowNumber, int columnNumber, int nCars, int nRides,
+    int bonus, int steps) {
+    this.cars = cars;
+    this.rides = rides;
     this.rowNumber = rowNumber;
     this.columnNumber = columnNumber;
-    this.nVehicles = nVehicles;
+    this.nCars = nCars;
     this.nRides = nRides;
     this.bonus = bonus;
     this.steps = steps;
+
+    List<Car> cars = new ArrayList<>();
+
+    for (int nCurrentCar = 0; nCurrentCar < nCars; nCurrentCar++) {
+      cars.add(new Car(0,0));
+    }
   }
 
   public int getRowNumber() {
@@ -39,12 +50,12 @@ public class Simulation {
     this.columnNumber = columnNumber;
   }
 
-  public int getnVehicles() {
-    return nVehicles;
+  public int getnCars() {
+    return nCars;
   }
 
-  public void setnVehicles(int nVehicles) {
-    this.nVehicles = nVehicles;
+  public void setnCars(int nCars) {
+    this.nCars = nCars;
   }
 
   public int getnRides() {
@@ -69,5 +80,20 @@ public class Simulation {
 
   public void setSteps(int steps) {
     this.steps = steps;
+  }
+  public List<Car> getCars() {
+    return cars;
+  }
+
+  public void setCars(List<Car> cars) {
+    this.cars = cars;
+  }
+
+  public List<Ride> getRides() {
+    return rides;
+  }
+
+  public void setRides(List<Ride> rides) {
+    this.rides = rides;
   }
 }

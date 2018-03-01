@@ -1,13 +1,10 @@
-package com.google.hashcode.utils;
+package com.hashcode.utils;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 import com.hashcode.datastructure.Simulation;
-import com.hashcode.utils.Car;
-import com.hashcode.utils.Point;
-import com.hashcode.utils.Ride;
 
 public class FileParser {
 
@@ -46,7 +43,6 @@ public class FileParser {
   public Simulation parseFile(){
 
     List<String> rows = parseRowsFromFile();
-    List<Car> cars = new ArrayList<>();
     List<Ride> rides = new ArrayList<>();
     int currentRow = 0;
     int nRows = rows.size() - 1;          // One is the header
@@ -78,12 +74,6 @@ public class FileParser {
       rides.add(currentRide);
     }
 
-    Simulation simulation = new Simulation(rowNumber, columnNumber, nVehicles, nRides, bonus, steps);
-
-    return 0;
-
+    return new Simulation(rides, rowNumber, columnNumber, nVehicles, nRides, bonus, steps);
   }
-
-
-
 }
