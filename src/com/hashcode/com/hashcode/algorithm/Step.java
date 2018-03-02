@@ -53,6 +53,21 @@ public class Step {
     currStep++;
   }
 
+  // B_P = (T_ES - T_CURRENT) - DISTANCE_TO_PICKUP
+  // if B_P >= 0 bonus is possible
+  //
+  // S_P = B_P + (T_LF - RIDE_DURATION)
+  // if S_P >= 0 score is possible
+  //
+  // SCORE = [RIDE_DURATION [+ BONUS]]
+  // Score is awarded if destination is reached before T_LF
+  // Bonus is awarded if pickup is at T_ES
+  //
+  // Highest priority:
+  // 1. S_P = 0
+  // 2. B_P = 0
+  // 3. SCORE1 > SCORE2
+  //
   private void executeRide(Car currCar) {
     currCar.removeFromCostOne();
     if(currCar.getCostToGo()==0){
